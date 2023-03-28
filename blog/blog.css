@@ -1,0 +1,116 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set default font size and family */
+  body {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Set container width and center horizontally */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    margin-top: 80px;
+  }
+  
+  /* Add styles to page title */
+  .page-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Style post cards */
+  .post-card {
+    display: inline-block;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 10px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+    position: relative;
+  }
+  
+  .post-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style post images */
+  .post-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  /* Style post content */
+  .post-content {
+    padding: 20px;
+  }
+  
+  .post-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .post-author {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 5px;
+  }
+  
+  .post-excerpt {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .read-more-link {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .read-more-link:hover {
+    background-color: #0062cc;
+  }
+  
+.orange-color{
+    font-size: 16px;
+    color: #f75023;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+.date {
+    position: absolute;
+    top: 18px;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    color: white;
+    right: 18px;
+    z-index: 2;
+    display: inline-block;
+    background-color: #1cbe59;
+    border-radius: 12px;
+    text-align: center;
+    padding: 13px 19px 12px;
+    line-height: 1;
+}
