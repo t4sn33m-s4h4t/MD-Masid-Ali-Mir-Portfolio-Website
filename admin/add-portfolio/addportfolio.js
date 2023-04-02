@@ -1,6 +1,6 @@
 
 const form = document.getElementById("add-post-form");
-const serverURL = "http://localhost:5000";
+const serverURL = window.config.serverUrl;
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();

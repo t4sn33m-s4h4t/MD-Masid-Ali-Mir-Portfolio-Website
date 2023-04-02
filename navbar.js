@@ -1,5 +1,5 @@
 const navbar = document.querySelector('#mynav');
-const clientUrl = "file:///C:/Users/HP/Desktop/tasneem"
+const clientUrl = "https://t4sn33m-s4h4t.github.io/MD-Masid-ali-Mir-Portfolio-website"
 
 navbar.innerHTML=`
 <div class="logo">Brand</div>
