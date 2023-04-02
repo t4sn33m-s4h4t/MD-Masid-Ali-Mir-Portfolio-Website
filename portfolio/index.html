@@ -1,34 +1,42 @@
+
 <!DOCTYPE html>
-<html>
+<!-- Design by foolishdeveloper.com-->
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Image Gallery</title>
-  <link rel="stylesheet" type="text/css" href="./portfolio.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+  <title>filterable gallery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="./portfolio.css">
+ <link rel="stylesheet" href="../navbar.css">
 </head>
 <body>
-  <h1>Responsive Image Gallery</h1>
-  
-  <div class="stage">
-  
-  
-    <div class="container">
-      <div class="ring">
-        <div class="img"></div>
-        <div class="img"></div>
-        <div class="img"></div>
-        <div class="img"></div>
-        <div class="img"></div>
-        <div class="img"></div>
-        <div class="img"></div>
-        <div class="img"></div>
-        <div class="img"></div>
-        <div class="img"></div>
-      </div>
-    </div>
-    
-    </div>
-  <script src="./portfolio.js"></script>
+
+<section class="gallery">
+	
+    <nav id="mynav"></nav>
+	<div class="container">
+		<div class="row">
+			<div class="gallery-filter">
+				<span class="filter-item active" data-filter="all">all</span>
+				<span class="filter-item" data-filter="logo">Logo</span>
+				<span class="filter-item" data-filter="brand">Brand</span>
+				<span class="filter-item" data-filter="t-shirt">t-shirt</span>
+        <span class="filter-item" data-filter="manipulation">manipulation</span>
+			</div>
+		</div>
+		
+		<div id="image-container" >
+			
+		</div>
+
+		
+		
+		
+	</div>
+</section>
+
+<script src="../navbar.js"></script>
+<script src="../config.js"></script>
+<script src="portfolio.js"></script>
 </body>
 </html>

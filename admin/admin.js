@@ -1,63 +1,85 @@
-const postTable = document.getElementById('post-table');
+const postTable = document.getElementById("post-table");
 
 // Function to fetch posts from the server
 async function fetchPosts() {
   try {
-    const response = await fetch('http://localhost:5000/posts');
+    const response = await fetch(`${serverURL}/api/posts`);
     const posts = await response.json();
+
     return posts;
   } catch (error) {
     console.error(error);
   }
 }
 
+const serverURL = window.config.serverUrl;
 // Function to display posts in the table
 function displayPosts(posts) {
-  posts.forEach(post => {
-    const row = document.createElement('tr');
+  posts.forEach((post) => {
+    date = new Date(post.date);
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const formattedDate = date.toLocaleDateString("en-US", options);
+
+
+
+
+
+
+    var cell = document.createElement("td");
+    var button = document.createElement("button");
+    button.textContent = "Delete";
+    button.onclick = function () {
+      deletePost(`${post._id},${post.image}`);
+    };
+    cell.appendChild(button);
+
+
+
+
+    const row = document.createElement("tr");
     row.innerHTML = `
-      <td>${post.id}</td>
+      <td>${post._id}</td>
       <td>${post.title}</td>
-      <td>${post.date}</td>
-      <td><button>Edit</button></td>
+      <td>${formattedDate}</td>
+      
     `;
+    row.appendChild(cell);
     postTable.appendChild(row);
   });
 }
 
-// Function to add a new post
-async function addPost(postData) {
-  try {
-    const response = await fetch('http://localhost:5000/post', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(postData)
-    });
-    const result = await response.json();
-    return result;
-  } catch (error) {
-    console.error(error);
-  }
-}
+const deletePost = async (post) => {
+  id = post.split(",")[0];
+  image = post.split(",")[1];
 
-// Event listener for adding a new post
-document.addEventListener('submit', async event => {
-  event.preventDefault();
-  const formData = new FormData(event.target);
-  const title = formData.get('title');
-  const content = formData.get('content');
-  const date = new Date().toISOString();
-  const postData = { title, content, date };
-  const result = await addPost(postData);
-  console.log(result);
-});
+  try {
+    const response = await fetch(`${serverURL}/api/posts/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    await fetch(`${serverURL}/api/images/${image}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    // Reload the page on success
+    if (response.ok) {
+      location.reload();
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 // Main function to fetch and display posts
 async function main() {
   const posts = await fetchPosts();
-  displayPosts([{posts}]);
+
+  displayPosts(posts);
 }
 
 main();

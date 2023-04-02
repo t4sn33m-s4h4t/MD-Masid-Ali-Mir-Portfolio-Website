@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Add Post</title>
-	<link rel="stylesheet" href="addpost.css">
+	<title>Add Portfolio</title>
+	<link rel="stylesheet" href="addportfolio.css">
 </head>
 
 <body>
@@ -15,8 +15,8 @@
 			<ul>
 				<li><a href="../../index.html">Public</a></li>
 				<li><a href="../index.html">Dashboard</a></li>
-				<li><a href="./index.html">Add Post</a></li>
-				<li><a href="../add-portfolio/index.html">Add Portfolio</a></li>
+				<li><a href="../add-post/index.html">Add Post</a></li>
+				<li><a href="./index.html">Add Portfolio</a></li>
 				<li><a href="#">Settings</a></li>
 				<li><a href="#">Logout</a></li>
 			</ul>
@@ -24,33 +24,31 @@
 
 		<div class="main-content">
 			<div class="header">
-				<h1>Add Post</h1>
+				<h1>Add Portfolio</h1>
 			</div>
 
 			<div class="form-container">
 				<form id="add-post-form">
-					<label for="title">Title:</label>
-					<input type="text" id="title" name="title" placeholder="Enter the title of your post" required>
+					<label for="category">Category:</label>
+					<input type="text" id="category" name="category" placeholder="Enter the category of your post" required>
+					
 					<label for="fileInput">
 						<i class="writeIcon"></i>
 					  </label>
 					  <input
 						type="file"
 						id="fileInput"
+						multiple
 						>
-					<label for="category">Category:</label>
-					<input type="text" id="category" name="category" placeholder="Enter the category of your post" required>
 
-					<label for="content">Content:</label>
-					<textarea id="content" name="content" placeholder="Enter the content of your post" required></textarea>
-
+					
 					<button type="submit" id="submit-btn">Submit</button>
 				</form>
 			</div>
 		</div>
 	</div>
 	<script src="../../config.js"></script>
-	<script src="addpost.js"></script>
+	<script src="addportfolio.js"></script>
 </body>
 
 </html>
